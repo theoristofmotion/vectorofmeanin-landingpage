@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Vector of Meaning</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #1C1F26;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px 20px;
+      background-color: #1C1F26;
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #B4976D;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+
+    .narrative {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    .testimonial {
+      font-style: italic;
+      max-width: 600px;
+      margin: 40px auto;
+      color: #CCCCCC;
+    }
+
+    .founder-note {
+      font-style: italic;
+      font-size: 1rem;
+      color: #AAAAAA;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    form {
+      background-color: #333333;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 0 auto 40px;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #4A90E2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #336FB0;
+    }
+
+    .success-message {
+      display: none;
+      opacity: 0;
+      margin-top: 20px;
+      color: #D4D444;
+      font-size: 1.1rem;
+      transition: opacity 0.8s ease-in-out;
+    }
+    .success-message.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .workbook-link {
+      font-size: 1.1rem;
+      color: #F889F9;
+      text-decoration: none;
+      display: block;
+      margin-top: 20px;
+    }
+
+    .footer {
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #D4D444;
+    }
+
+    .countdown {
+      font-size: 1.4rem;
+      margin-top: 20px;
+      color: #FFB347;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Vector of Meaning Logo" class="logo" />
+    <h1>The Vector of Meaning</h1>
+    <p>The book is scheduled to launch <strong>September 15, 2025</strong>.</p>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 20px auto;">
+  <img src="Book.Cover.png" alt="The Vector of Meaning Book Cover" style="max-width: 280px; border-radius: 8px;" />
+  <img src="Cover Page.png" alt="The Vector of Meaning Workbook Cover" style="max-width: 280px; border-radius: 8px;" />
+</div>
+
+  <div class="narrative">
+    <p>
+      I am beyond excited to share that <strong>The Vector of Meaning</strong> is launching this fall. This book is the foundation of a much larger system—a creative framework that blends philosophy, personal transformation, and practical tools for navigating tension with clarity.
+    </p>
+    <p>
+      This isn't just a book. It's the beginning of an evolving platform of workbooks, workshops, certification programs, and community-driven development. Whether you're here to reflect, rebuild, or reimagine—you're not alone. You're part of a system designed to move you forward, not with perfection, but with purpose.
+    </p>
+    <p>
+      Sign up below to stay in the loop as we prepare for launch, and get early insights into the tools, models, and stories that make up The Vector of Meaning system.
+    </p>
+    <p>
+      The <strong>Vector of Meaning Workbook</strong> is already available and offers a powerful hands-on experience. It’s more than just a companion—it’s a tool for transformation. Inside, you'll find guided prompts, custom diagrams, and a framework for applying the system to your everyday decisions. It’s the first physical piece of a much larger journey.
+    </p>
+  </div>
+
+  <div class="testimonial">
+    “Hi! I read the prologue to your book and would love to read more when you are ready to share. I thought the references to your faith were well said and not "preachy". Overall it was a compelling invitation to keep reading.”<br />
+    — Advance Reader
+  </div>
+
+  <p class="founder-note">
+    I created The Vector of Meaning after walking through my own collapse—and finding purpose in the tension. 
+    I hope this work helps you as much as it’s helped me. — Brandyn Holloway
+  </p>
+
+  <a href="https://a.co/d/cfmpyr9" target="_blank" class="workbook-link">
+    Already live: Get The Vector of Meaning Workbook on Amazon
+  </a>
+
+  <form id="signup-form">
+    <input type="text" id="name" name="name" placeholder="Your Name" required />
+    <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+    <input type="submit" value="Notify Me" />
+    <div class="success-message" id="success-message">
+  You're officially on the list. No spam. No fluff. Just the kind of signal worth tracking.
+</div>
+  </form>
+
+  <div class="footer">
+    &copy; 2025 Holloway Creative Holdings LLC. All rights reserved.
+  </div>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      fetch('https://script.google.com/macros/s/AKfycbxwxdZICRlyIyjQFMYvD7TjFtsQlDiIxhIaDbJUPB98RsmnT86xvgpPvVu0BeQzAV4LGA/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email })
+      }).then(() => {
+        document.getElementById('signup-form').reset();
+        const msg = document.getElementById('success-message');
+        msg.classList.add('show');
+      }).catch(error => {
+        alert('Something went wrong. Please try again later.');
+      });
+    });
+
+    // Countdown Timer
+    const launchDate = new Date('2025-09-15T00:00:00').getTime();
+    const countdownEl = document.getElementById('countdown');
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `⏳ Launching in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
