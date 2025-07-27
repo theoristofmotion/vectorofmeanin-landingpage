@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Vector of Meaning</title>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Vector of Meaning</title>
+  <style>
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
@@ -17,6 +16,20 @@
     header {
       padding: 40px 20px;
       background-color: #1C1F26;
+      position: relative;
+    }
+
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+
+    nav a {
+      color: #F889F9;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
     }
 
     .logo {
@@ -97,6 +110,7 @@
       font-size: 1.1rem;
       transition: opacity 0.8s ease-in-out;
     }
+
     .success-message.show {
       display: block;
       opacity: 1;
@@ -124,53 +138,64 @@
   </style>
 </head>
 <body>
-<header><nav style="position: absolute; top: 20px; right: 30px;"><a href="investors.html" style="color: #F889F9; font-weight: bold; text-decoration: none; font-size: 1rem;">For Investors</a></nav>
-<img alt="Vector of Meaning Logo" class="logo" src="logo.png"/>
-<h1>The Vector of Meaning</h1>
-<p>The book is scheduled to launch <strong>September 15, 2025</strong>.</p>
-<div class="countdown" id="countdown"></div>
-</header>
-<div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 20px auto;">
-<img alt="The Vector of Meaning Book Cover" src="Book.Cover.png" style="max-width: 280px; border-radius: 8px;"/>
-<img alt="The Vector of Meaning Workbook Cover" src="Cover Page.png" style="max-width: 280px; border-radius: 8px;"/>
-</div>
-<div class="narrative">
-<p>
+  <header>
+    <nav>
+      <a href="investors.html">For Investors</a>
+    </nav>
+    <img src="logo.png" alt="Vector of Meaning Logo" class="logo" />
+    <h1>The Vector of Meaning</h1>
+    <p>The book is scheduled to launch <strong>September 15, 2025</strong>.</p>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 20px auto;">
+    <img src="Book.Cover.png" alt="The Vector of Meaning Book Cover" style="max-width: 280px; border-radius: 8px;" />
+    <img src="Cover Page.png" alt="The Vector of Meaning Workbook Cover" style="max-width: 280px; border-radius: 8px;" />
+  </div>
+
+  <div class="narrative">
+    <p>
       I am beyond excited to share that <strong>The Vector of Meaning</strong> is launching this fall. This book is the foundation of a much larger system—a creative framework that blends philosophy, personal transformation, and practical tools for navigating tension with clarity.
     </p>
-<p>
+    <p>
       This isn't just a book. It's the beginning of an evolving platform of workbooks, workshops, certification programs, and community-driven development. Whether you're here to reflect, rebuild, or reimagine—you're not alone. You're part of a system designed to move you forward, not with perfection, but with purpose.
     </p>
-<p>
+    <p>
       Sign up below to stay in the loop as we prepare for launch, and get early insights into the tools, models, and stories that make up The Vector of Meaning system.
     </p>
-<p>
+    <p>
       The <strong>Vector of Meaning Workbook</strong> is already available and offers a powerful hands-on experience. It’s more than just a companion—it’s a tool for transformation. Inside, you'll find guided prompts, custom diagrams, and a framework for applying the system to your everyday decisions. It’s the first physical piece of a much larger journey.
     </p>
-</div>
-<div class="testimonial">
-    “Hi! I read the prologue to your book and would love to read more when you are ready to share. I thought the references to your faith were well said and not "preachy". Overall it was a compelling invitation to keep reading.”<br/>
+  </div>
+
+  <div class="testimonial">
+    “Hi! I read the prologue to your book and would love to read more when you are ready to share. I thought the references to your faith were well said and not "preachy". Overall it was a compelling invitation to keep reading.”<br />
     — Advance Reader
   </div>
-<p class="founder-note">
+
+  <p class="founder-note">
     I created The Vector of Meaning after walking through my own collapse—and finding purpose in the tension. 
     I hope this work helps you as much as it’s helped me. — Brandyn Holloway
   </p>
-<a class="workbook-link" href="https://a.co/d/cfmpyr9" target="_blank">
+
+  <a href="https://a.co/d/cfmpyr9" target="_blank" class="workbook-link">
     Already live: Get The Vector of Meaning Workbook on Amazon
   </a>
-<form id="signup-form">
-<input id="name" name="name" placeholder="Your Name" required="" type="text"/>
-<input id="email" name="email" placeholder="Your Email Address" required="" type="email"/>
-<input type="submit" value="Notify Me"/>
-<div class="success-message" id="success-message">
-  You're officially on the list. No spam. No fluff. Just the kind of signal worth tracking.
-</div>
-</form>
-<div class="footer">
-    © 2025 Holloway Creative Holdings LLC. All rights reserved.
+
+  <form id="signup-form">
+    <input type="text" id="name" name="name" placeholder="Your Name" required />
+    <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+    <input type="submit" value="Notify Me" />
+    <div class="success-message" id="success-message">
+      You're officially on the list. No spam. No fluff. Just the kind of signal worth tracking.
+    </div>
+  </form>
+
+  <div class="footer">
+    &copy; 2025 Holloway Creative Holdings LLC. All rights reserved.
   </div>
-<script>
+
+  <script>
     document.getElementById('signup-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('name').value;
