@@ -4,153 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Vector of Meaning</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #1C1F26;
-      color: #FFFFFF;
-      text-align: center;
-    }
-
-    header {
-      padding: 40px 20px;
-      background-color: #1C1F26;
-      position: relative;
-    }
-
-    nav {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-    }
-
-    nav a {
-      color: #F889F9;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    .logo {
-      width: 100px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      color: #B4976D;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      margin-bottom: 40px;
-    }
-
-    .narrative {
-      max-width: 700px;
-      margin: 0 auto 60px;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      padding: 0 20px;
-    }
-
-    .testimonial {
-      font-style: italic;
-      max-width: 600px;
-      margin: 40px auto;
-      color: #CCCCCC;
-    }
-
-    .founder-note {
-      font-style: italic;
-      font-size: 1rem;
-      color: #AAAAAA;
-      max-width: 600px;
-      margin: 30px auto;
-    }
-
-    form {
-      background-color: #333333;
-      padding: 30px;
-      border-radius: 8px;
-      max-width: 400px;
-      margin: 0 auto 40px;
-    }
-
-    input[type="text"],
-    input[type="email"] {
-      width: 90%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 4px;
-    }
-
-    input[type="submit"] {
-      background-color: #4A90E2;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 4px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #336FB0;
-    }
-
-    .success-message {
-      display: none;
-      opacity: 0;
-      margin-top: 20px;
-      color: #D4D444;
-      font-size: 1.1rem;
-      transition: opacity 0.8s ease-in-out;
-    }
-
-    .success-message.show {
-      display: block;
-      opacity: 1;
-    }
-
-    .workbook-link {
-      font-size: 1.1rem;
-      color: #F889F9;
-      text-decoration: none;
-      display: block;
-      margin-top: 20px;
-    }
-
-    .footer {
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #D4D444;
-    }
-
-    .countdown {
-      font-size: 1.4rem;
-      margin-top: 20px;
-      color: #FFB347;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <nav>
       <a href="investors.html">For Investors</a>
     </nav>
-    <img src="logo.png" alt="Vector of Meaning Logo" class="logo" />
+  <img src="assets/logo.png" alt="Vector of Meaning Logo" class="logo" />
     <h1>The Vector of Meaning</h1>
     <p>The book is scheduled to launch <strong>September 15, 2025</strong>.</p>
     <div class="countdown" id="countdown"></div>
   </header>
 
   <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 20px auto;">
-    <img src="Book.Cover.png" alt="The Vector of Meaning Book Cover" style="max-width: 280px; border-radius: 8px;" />
-    <img src="Cover Page.png" alt="The Vector of Meaning Workbook Cover" style="max-width: 280px; border-radius: 8px;" />
+    <img src="assets/Book.Cover.png" alt="The Vector of Meaning Book Cover" style="max-width: 280px; border-radius: 8px;" />
+    <img src="assets/Cover Page.png" alt="The Vector of Meaning Workbook Cover" style="max-width: 280px; border-radius: 8px;" />
   </div>
 
   <div class="narrative">
@@ -182,9 +51,14 @@
     Already live: Get The Vector of Meaning Workbook on Amazon
   </a>
 
-  <form id="signup-form">
+  <form id="signup-form" action="https://formsubmit.co/theoristofmotion@gmail.com" method="POST">
     <input type="text" id="name" name="name" placeholder="Your Name" required />
     <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+    <input type="hidden" name="_subject" value="Vector of Meaning Notify List" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" id="redirectNext" name="_next" value="" />
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+    <input type="hidden" name="_autoresponse" value="Thanks for your interest in The Vector of Meaning. You're on the list!" />
     <input type="submit" value="Notify Me" />
     <div class="success-message" id="success-message">
       You're officially on the list. No spam. No fluff. Just the kind of signal worth tracking.
@@ -196,26 +70,22 @@
   </div>
 
   <script>
-    document.getElementById('signup-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
+    // Ensure FormSubmit redirect uses an absolute URL back to this page with a success anchor
+    (function () {
+      const next = document.getElementById('redirectNext');
+      if (next) {
+        next.value = `${window.location.origin}${window.location.pathname}?submitted=true#success-message`;
+      }
+    })();
 
-      fetch('https://script.google.com/macros/s/AKfycbxwxdZICRlyIyjQFMYvD7TjFtsQlDiIxhIaDbJUPB98RsmnT86xvgpPvVu0BeQzAV4LGA/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name, email })
-      }).then(() => {
-        document.getElementById('signup-form').reset();
+    // Show success message if redirected after submission
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('submitted') === 'true') {
         const msg = document.getElementById('success-message');
-        msg.classList.add('show');
-      }).catch(error => {
-        alert('Something went wrong. Please try again later.');
-      });
-    });
+        if (msg) msg.classList.add('show');
+      }
+    })();
 
     // Countdown Timer
     const launchDate = new Date('2025-09-15T00:00:00').getTime();
